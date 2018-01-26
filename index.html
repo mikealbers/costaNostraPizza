@@ -10,41 +10,56 @@
   </head>
   <body>
     <div class="container">
-      <div class="jumbotron">
-        <h1>Costa Nostra Pizza</h1>
-      </div>
-      <div id="pizzaPage">
+      <div id="pizzaPage" class="well">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-5">
+            <img class="logo" src="img/costanostra.jpg" alt="">
           </div>
           <div class="col-md-4">
-            <h2>Let us craft an authentic sicilian pizza for you!</h2>
+
+            <h2>Let us craft an authentic sicilian pizza for you!</h2><br>
             <form id="pizzaForm">
               <div class="form-group">
-                <label for="small">Small</label>
+
                 <input type="radio" name="size" value="small">
-                <label for="medium">Medium</label>
+                <label for="small">Small</label>
                 <input type="radio" name="size" value="medium">
-                <label for="Large">Large</label>
+                <label for="medium">Medium</label>
                 <input type="radio" name="size" value="large">
+                <label for="Large">Large</label>
               </div>
               <div class="form-group">
+                <hr>
                 <input class="chk" type="checkbox" name="topping" value="pepperoni">
+                <label for="topping">Pepperoni</label><br>
+                <input class="chk" type="checkbox" name="topping" value="prosciutto">
+                <label for="topping">Prosciutto</label><br>
+                <input class="chk" type="checkbox" name="topping" value="guanciale">
+                <label for="topping">Guanciale</label>
+                <hr>
                 <input class="chk" type="checkbox" name="topping" value="tomato">
+                <label for="topping">Tomato</label><br>
                 <input class="chk" type="checkbox" name="topping" value="mushroom">
+                <label for="topping">Mushroom</label><br>
                 <input class="chk" type="checkbox" name="topping" value="spinach">
+                <label for="topping">Spinach</label><br>
                 <input class="chk" type="checkbox" name="topping" value="onion">
+                <label for="topping">Onion</label><br>
                 <input class="chk" type="checkbox" name="topping" value="eggplant">
+                <label for="topping">Eggplant</label><br>
+                <hr>
               </div>
               <div class="form-group">
-                <button id="addPizza" type="submit" name="button">Add Pizza</button>
-                <!-- <button id="submitOrder" type="submit" name="button">Total Order</button> -->
+                <button id="addPizza" type="button" name="button">Add Pizza</button>
+                <button id="submitOrder" type="button" name="button">Total Order</button>
               </div>
             </form>
           </div> <!-- form column -->
-          <div class="col-md-4">
-          </div>
+          <!-- <div class="col-md-4"></div> -->
         </div> <!-- pizza view row -->
+        <div class="row" id="orderTotal">
+          <h1>Order total:</h1>
+        </div>
       </div>
     </div>
   </body>

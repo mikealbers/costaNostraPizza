@@ -1,0 +1,12 @@
+.logo {
+  max-height: 300px;;
+  margin: 0 auto;
+}
+
+.well {
+  background-color: #fff;
+}
+
+body {
+  background-image: url(../img/bg.jpg);
+}
