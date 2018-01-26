@@ -11,7 +11,7 @@ _Friday code review for Week Four of Intro to Programming at Epicodus_
 ## Location
 
 You can find this file at
-https://github.com/mikealbers/costanostra
+https://github.com/mikealbers/costaNostraPizza
 
 ## Goals of Pizza project:
 

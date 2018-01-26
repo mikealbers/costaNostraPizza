@@ -14,17 +14,37 @@
         <h1>Costa Nostra Pizza</h1>
       </div>
       <div id="pizzaPage">
-        <div id="pizzaForm">
-          <form>
-            <div class="form-group">
-              <input type="radio" name="small" value="small">
-              <input type="radio" name="medium" value="medium">
-              <input type="radio" name="large" value="large">
-            </div>
-            <div class="form-group">
-              <input type="text" name="" value="">
-            </div>
-          </form>
+        <div class="row">
+          <div class="col-md-4">
+          </div>
+          <div class="col-md-4">
+            <h2>Let us craft an authentic sicilian pizza for you!</h2>
+            <form id="pizzaForm">
+              <div class="form-group">
+                <label for="small">Small</label>
+                <input type="radio" name="size" value="small">
+                <label for="medium">Medium</label>
+                <input type="radio" name="size" value="medium">
+                <label for="Large">Large</label>
+                <input type="radio" name="size" value="large">
+              </div>
+              <div class="form-group">
+                <input class="chk" type="checkbox" name="topping" value="pepperoni">
+                <input class="chk" type="checkbox" name="topping" value="tomato">
+                <input class="chk" type="checkbox" name="topping" value="mushroom">
+                <input class="chk" type="checkbox" name="topping" value="spinach">
+                <input class="chk" type="checkbox" name="topping" value="onion">
+                <input class="chk" type="checkbox" name="topping" value="eggplant">
+              </div>
+              <div class="form-group">
+                <button id="addPizza" type="submit" name="button">Add Pizza</button>
+                <!-- <button id="submitOrder" type="submit" name="button">Total Order</button> -->
+              </div>
+            </form>
+          </div> <!-- form column -->
+          <div class="col-md-4">
+          </div>
+        </div> <!-- pizza view row -->
       </div>
     </div>
   </body>
