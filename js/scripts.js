@@ -1,5 +1,12 @@
 //Back-end
 //Pizza constructor
+Pizza.prototype.addToppings = $('.chk:checked').each(function() {
+  this.toppings.push($('.chk:checked').val());
+  });
+
+Order.prototype.addPizza = function() {
+  this.pizzas.push(Pizza);
+};
 
 function Pizza(size) {
   this.size = size;
@@ -11,23 +18,21 @@ function Order(){
   this.total = 0;
 }
 
-Pizza.prototype.addToppings = $('.chk:checked').each(function() {
-  this.toppings.push($(this).val());
-  });
+
 
 //User
 $(document).ready(function() {
   var newOrder = new Order();
   console.log(newOrder);
-  debugger;
-  $('#addPizza').submit(function(event) {
-    event.preventDeafault();
-    debugger;
-    var newPizza = new Pizza($('input[name=radioName]:checked', '#pizzaForm').val())
-    newPizza.addToppings();
+  $('#pizzaForm').submit(function(event) {
+    event.preventDefault();
+    var newPizza = new Pizza($('input[name=size]:checked', '#pizzaForm').val());
+    // newPizza.addToppings();
+    newOrder.addPizza();
+    console.log(newOrder);
     console.log(newPizza);
-  })
+  });
   $('#pizzaForm').submit(function(event) {
 
-  })
+  });
 });
