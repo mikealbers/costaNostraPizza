@@ -17,7 +17,7 @@ Order.prototype.sumPizzas = function() {
   }
   this.total = pizzaPrice;
   console.log(this.total);
-  $('#orderView').html('<h2>Order Total: $' + pizzaPrice + ".00</h2><h3>It will be ready in 30 minutes or less and at your door or it's free!</h3>" )
+  $('#orderView').html('<h2>Order Total: $' + pizzaPrice + '.00</h2><h3>It will be ready in 30 minutes or less and at your door or it is free!</h3><br><h4>Your Deliverator will be:</h4><h3>Hiro Protagonist</h3><img src="img/hiro.png" class="deliverator">')
 };
 
 Pizza.prototype.addToppings = (function() {
@@ -28,21 +28,24 @@ Pizza.prototype.addToppings = (function() {
   this.toppings = toppingsChecked;
   });
 
+Order.prototype.displayOrder = function(Pizza) {
+  var sizePrice = '';
+    if (Pizza.size === 'large') {
+      sizePrice = " $10.00";
+    } else if (Pizza.size === 'medium'){
+      sizePrice = " $7.00";
+    } else {
+      sizePrice = " $5.00";
+    }
+    $('#orderView').append('<img src="img/box.png" class="pizzaBox"><h3>' + Pizza.size + ' pizza:' + sizePrice + '</h3><ul>');
+    Pizza.toppings.forEach(function(topping) {
+      $('#orderView').append('<li>'+ topping + ' : $1.00</li>');
+    });
+    $('#orderView').append('</ul>');
+  }
+
 Order.prototype.addPizza = function(Pizza) {
   this.pizzas.push(Pizza);
-  var sizePrice = "";
-  if (Pizza.size === 'large') {
-    sizePrice = " $10.00";
-  } else if (Pizza.size === 'medium'){
-    sizePrice = " $7.00";
-  } else {
-    sizePrice = " $5.00";
-  }
-  $('#orderView').append('<img src="img/box.png" class="pizzaBox"><h3>' + Pizza.size + ' pizza:' + sizePrice + '</h3><ul>');
-  Pizza.toppings.forEach(function(topping) {
-    $('#orderView').append('<li>'+ topping + ' : $1.00</li>');
-  });
-  $('#orderView').append('</ul>');
 };
 
 //Constructors
@@ -67,6 +70,7 @@ $(document).ready(function() {
     var newPizza = new Pizza($('input[name=size]:checked', '#pizzaForm').val());
     newPizza.addToppings();
     newOrder.addPizza(newPizza);
+    newOrder.displayOrder(newPizza);
     console.log(newOrder);
     console.log(newPizza);
   });
