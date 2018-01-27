@@ -25,13 +25,13 @@ Create a website for a pizza company where a user can choose one or more individ
 
 ### _The following specs are included in the program:_
 
-* Take input from the user to determine pizza size, toppings, and extras
-  input: large, pepperoni, cajun, ranch
-  output: Large cajun pizza with pepperoni and a side of ranch
+* Take input from the user to determine pizza size and toppings
+  input: large, pepperoni
+  output: Large pizza with pepperoni
 
 * Store pizza properties when input.
   input: pizza A
-  output: Large pizza with pepperoni, cajun, ranch.
+  output: Size: Large Toppings: Pepperoni
 
 * Keep track of pizza in an order total when added.
   input: add pizza A, add pizza B.
@@ -40,6 +40,28 @@ Create a website for a pizza company where a user can choose one or more individ
 * Add up total order based on pizza sizes and toppings.
   input: Large pepperoni, banana pepper pizza.
   output: Large pizza ($10) + 2 toppings ($0.50 * 2). Your total is: $11.00
+
+* Display pizzas with individual prices and order total.
+  input: pizza A, pizza B, pizza C
+  output: Large Pizza: $10.00
+            Pepperoni: $1.00
+            Eggplant: $1.00
+
+          Medium Pizza: $7.00
+            Spinach: $1.00
+            Mushroom: $1.00
+
+          Small Pizza: $5.00
+            Pepperoni: $1.00
+            Mushroom: $1.00
+
+* Add Pizza totals together
+  input: Pizza A: Large $10 + Pepperoni $1 + Mushroom $1
+  output: Pizza A = $12
+
+* Display Order total after Submit
+  input: Pizza A: $10 Pizza B: $12    
+  output: Order Total: $22.00
 
 
 ## Setup/Installation Requirements

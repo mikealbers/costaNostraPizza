@@ -10,3 +10,7 @@
 body {
   background-image: url(../img/bg.jpg);
 }
+
+.container {
+  margin-top: 4%;
+}

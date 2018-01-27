@@ -6,9 +6,9 @@ Order.prototype.sumPizzas = function() {
   for(i = 0; i < this.pizzas.length; i++) {
     var sizeString = this.pizzas[i].size
     var numToppings = this.pizzas[i].toppings
-    if (sizeString === "large") {
+    if (sizeString === 'large') {
       pizzaPrice = pizzaPrice + 10 + numToppings.length;
-    } else if (sizeString === "medium") {
+    } else if (sizeString === 'medium') {
       console.log(this.pizzas[i].size);
       pizzaPrice = pizzaPrice + 7 + numToppings.length;
     } else {
@@ -17,6 +17,7 @@ Order.prototype.sumPizzas = function() {
   }
   this.total = pizzaPrice;
   console.log(this.total);
+  $('#orderView').html('<h2>Order Total: $' + pizzaPrice + ".00</h2><h3>It will be ready in 30 minutes or less and at your door or it's free!</h3>" )
 };
 
 Pizza.prototype.addToppings = (function() {
@@ -29,9 +30,22 @@ Pizza.prototype.addToppings = (function() {
 
 Order.prototype.addPizza = function(Pizza) {
   this.pizzas.push(Pizza);
+  var sizePrice = "";
+  if (Pizza.size === 'large') {
+    sizePrice = " $10.00";
+  } else if (Pizza.size === 'medium'){
+    sizePrice = " $7.00";
+  } else {
+    sizePrice = " $5.00";
+  }
+  $('#orderView').append('<img src="img/box.png" class="pizzaBox"><h3>' + Pizza.size + ' pizza:' + sizePrice + '</h3><ul>');
+  Pizza.toppings.forEach(function(topping) {
+    $('#orderView').append('<li>'+ topping + ' : $1.00</li>');
+  });
+  $('#orderView').append('</ul>');
 };
 
-//Pizza constructor
+//Constructors
 function Pizza(size) {
   this.size = size;
   this.toppings = [];
